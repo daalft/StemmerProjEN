@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- WARNING: Eclipse auto-generated file.
+              Any modifications will be overwritten.
+              To include a user specific buildfile here, simply create one in the same
+              directory with the processing instruction <?eclipse.ant.import?>
+              as the first entry and export the buildfile again. -->
+<project basedir="." default="build" name="StemmerProjEn">
+    <property environment="env"/>
+    <property name="debuglevel" value="source,lines,vars"/>
+    <property name="target" value="1.6"/>
+    <property name="source" value="1.6"/>
+    <path id="StemmerProjEn.classpath">
+        <pathelement location="bin"/>
+        <pathelement location="lib/morpha-stemmer-1.0.3"/>
+    </path>
+    <target name="init">
+        <mkdir dir="bin"/>
+        <copy includeemptydirs="false" todir="bin">
+            <fileset dir="src">
+                <exclude name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="clean">
+        <delete dir="bin"/>
+    </target>
+    <target depends="clean" name="cleanall"/>
+    <target depends="build-subprojects,build-project" name="build"/>
+    <target name="build-subprojects"/>
+    <target depends="init" name="build-project">
+        <echo message="${ant.project.name}: ${ant.file}"/>
+        <javac debug="true" debuglevel="${debuglevel}" destdir="bin" includeantruntime="false" source="${source}" target="${target}">
+            <src path="src"/>
+            <classpath refid="StemmerProjEn.classpath"/>
+        </javac>
+    </target>
+    <target description="Build all projects which reference this project. Useful to propagate changes." name="build-refprojects"/>
+    <target name="LemmaLearn">
+        <java classname="gui.LemmaLearn" failonerror="true" fork="yes">
+            <classpath refid="StemmerProjEn.classpath"/>
+        </java>
+    </target>
+    <target name="LemmaMe">
+        <java classname="logic.LemmaMe" failonerror="true" fork="yes">
+            <classpath refid="StemmerProjEn.classpath"/>
+        </java>
+    </target>
+    <target name="LemmaMeOld">
+        <java classname="logic.LemmaMeOld" failonerror="true" fork="yes">
+            <classpath refid="StemmerProjEn.classpath"/>
+        </java>
+    </target>
+    <target name="MainProgram (1)">
+        <java classname="gui.MainProgram" failonerror="true" fork="yes">
+            <classpath refid="StemmerProjEn.classpath"/>
+        </java>
+    </target>
+    <target name="NewJFrame">
+        <java classname="gui.NewJFrame" failonerror="true" fork="yes">
+            <classpath refid="StemmerProjEn.classpath"/>
+        </java>
+    </target>
+    <target name="SentenceGen">
+        <java classname="gen.SentenceGen" failonerror="true" fork="yes">
+            <classpath refid="StemmerProjEn.classpath"/>
+        </java>
+    </target>
+    <target name="StemLearn">
+        <java classname="gui.StemLearn" failonerror="true" fork="yes">
+            <classpath refid="StemmerProjEn.classpath"/>
+        </java>
+    </target>
+    <target name="StemMe">
+        <java classname="logic.StemMe" failonerror="true" fork="yes">
+            <classpath refid="StemmerProjEn.classpath"/>
+        </java>
+    </target>
+    <target name="StemTest">
+        <java classname="gui.StemTest" failonerror="true" fork="yes">
+            <classpath refid="StemmerProjEn.classpath"/>
+        </java>
+    </target>
+    <target name="ThankYou">
+        <java classname="gui.ThankYou" failonerror="true" fork="yes">
+            <classpath refid="StemmerProjEn.classpath"/>
+        </java>
+    </target>
+    <target name="Welcome">
+        <java classname="gui.Welcome" failonerror="true" fork="yes">
+            <classpath refid="StemmerProjEn.classpath"/>
+        </java>
+    </target>
+</project>
