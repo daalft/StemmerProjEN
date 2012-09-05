@@ -1,0 +1,4 @@
+= LICENSE
+
+== Licensed to David Alfter, 2012. All rights reserved.
+For full credits, see the in-program "About..."

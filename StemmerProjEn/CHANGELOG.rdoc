@@ -1,0 +1,10 @@
+= CHANGELOG
+
+== Planned updates
+=== Version 0.0.2
+* Better lemmatizer
+
+== Latest updates
+=== Version 0.0.1
+* Main functionality
+* User can generate sentence file

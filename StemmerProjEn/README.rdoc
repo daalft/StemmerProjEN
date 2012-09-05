@@ -1,0 +1,14 @@
+= README
+
+== Interactive Stemmer/Lemmatizer Learner Program
+
+=== Summary
+This program is designed to help people understand how stemmers and lemmatizers work.
+
+=== Features
+* Learn by observing
+
+=== Function
+On the screen after the welcome screen, the user can type any text in the first box and click the button to see the stemmed output in the box below.
+On the next screen, the user can click the leftmost button to get a sentence (picked from <tt>sentences.txt</tt>). They must attempt to mimic the output of the stemmer. Clicking the rightmost button will reveal whether or not the answer is correct.
+The same is true with the next 2 screens. Those are exactly the same as the <tt>Stemmer</tt> screens, except that this time, a <tt>lemmatizer</tt> is used.
