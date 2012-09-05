@@ -178,7 +178,7 @@ public class LemmaTest extends javax.swing.JPanel {
 			show.setText("Well done! That was the expected answer!");
 			input.setText("");
 		} else {
-			show.setText("That was not the expected answer.\nThe expected answer was: " + gold);
+			show.setText("That was not the expected answer.\nThe expected answer was: " + gold + "\nYour answer: " + input.getText());
 			input.setText("");
 		}
 		input.setEditable(false);
