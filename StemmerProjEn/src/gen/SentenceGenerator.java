@@ -4,75 +4,13 @@ import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.util.ArrayList;
-
 import javax.swing.JOptionPane;
 
-import stemmer.EnglishStemmer;
-
-import edu.washington.cs.knowitall.morpha.MorphaStemmer;
+import logic.LemmaMe;
+import logic.StemMe;
 
 public class SentenceGenerator {
-	class LemmaMe {
 
-		private ArrayList<String> a;
-		
-		public LemmaMe () {
-			a = new ArrayList<String>();
-		}
-		
-		public ArrayList<String> lemmatize (String s) {
-			String[] sp = s.split(" ");
-			MorphaStemmer ms = new MorphaStemmer();
-			for (String p : sp) {
-				a.add(ms.morpha(p.toLowerCase()));
-			}
-			return a;
-		}
-		
-		public String lemmatizeToString (String s) {
-			String[] sp = s.split(" ");
-			StringBuilder sb = new StringBuilder();
-			MorphaStemmer ms = new MorphaStemmer();
-			for (String p : sp) {
-				sb.append(ms.morpha(p.toLowerCase())).append(" ");
-			}
-			return sb.toString();
-		}
-		
-	}
-	class StemMe {
-
-		private ArrayList<String> a;
-		
-		public StemMe () {
-			
-		}
-		
-		public ArrayList<String> stem (String s) {
-			a = new ArrayList<String>();
-			EnglishStemmer st = new EnglishStemmer();
-			for (String p : s.split(" ")) {
-				st.setCurrent(p.toLowerCase());
-				st.stem();
-				a.add(st.getCurrent());
-			}
-			return a;
-		}
-		
-		public String stemToString (String s)  {
-			StringBuilder sb = new StringBuilder();
-			EnglishStemmer st = new EnglishStemmer();
-			for (String p : s.split(" ")) {
-				st.setCurrent(p.toLowerCase());
-				st.stem();
-				sb.append(st.getCurrent()).append(" ");
-			}
-			return sb.toString();
-		}
-		
-		
-	}
 	private LemmaMe lm;
 	private StemMe sm;
 	private boolean more;
